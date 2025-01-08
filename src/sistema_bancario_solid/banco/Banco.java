@@ -1,12 +1,16 @@
-package sistema_bancario_solid.caixa_eletronico;
+package sistema_bancario_solid.banco;
 
 import sistema_bancario_solid.model.conta.Conta;
+import sistema_bancario_solid.services.Comunicacao;
+import sistema_bancario_solid.services.Email;
 
-public class CaixaEletronico {
+public class Banco {
     private Conta conta;
+    private Comunicacao email;
 
-    public CaixaEletronico(Conta conta) {
+    public Banco(Conta conta, Comunicacao email) {
         this.conta = conta;
+        this.email = email;
     }
 
     public void calculaTaxa () {
@@ -15,10 +19,14 @@ public class CaixaEletronico {
 
     public void deposita () {
         conta.deposita();
+        email.enviaComunicacao();
     }
 
     public void saca() {
         conta.saca();
+        email.enviaComunicacao();
     }
+
+
 
 }
