@@ -1,23 +1,10 @@
 package sistema_bancario_solid.model.conta_corrente;
 
-import sistema_bancario_solid.model.conta.Conta;
+public interface ContaCorrente {
 
-public class ContaCorrente implements Conta {
+    public void calculaTaxa();
 
+    public void depositoContaCorrente();
 
-
-    @Override
-    public void calculaTaxa() {
-        System.out.println("Calcula taxa de 0,02% para Conta Corrente");
-    }
-
-    @Override
-    public void deposita() {
-        System.out.println("Deposita na Conta Corrente...");
-    }
-
-    @Override
-    public void saca() {
-        System.out.println("Saca da Conta Corrente...");
-    }
+    public void saqueContaCorrente();
 }
